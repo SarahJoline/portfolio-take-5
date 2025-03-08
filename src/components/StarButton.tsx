@@ -2,14 +2,12 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import styled, { keyframes } from "styled-components";
 
-// Twinkle Animation
 const twinkle = keyframes`
   0% { opacity: 0.2; transform: scale(1); }
   50% { opacity: 0.8; transform: scale(1.2); }
   100% { opacity: 0.2; transform: scale(1); }
 `;
 
-// Styled Components
 const ButtonContainer = styled.div`
   position: relative;
   display: inline-block;
@@ -48,7 +46,6 @@ const ButtonText = styled.span`
 function StarButton() {
   const [isHovered, setIsHovered] = useState(false);
 
-  // Generate stars only when hovered
   const generateStars = () => {
     if (!isHovered) return null;
 
@@ -85,12 +82,12 @@ function StarButton() {
       <StyledButton
         initial={{ opacity: 0, y: -350 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1.5, delay: 4 }}
+        transition={{ duration: 3, delay: 5 }}
         isHovered={isHovered}
       >
         <ButtonText>Check out my projects</ButtonText>
       </StyledButton>
-      {generateStars()} {/* Stars only exist during hover */}
+      {generateStars()}
     </ButtonContainer>
   );
 }

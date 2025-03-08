@@ -34,9 +34,9 @@ const StyledSubheader = styled(motion.h2)`
   font-size: 40px;
   font-weight: 100;
   text-align: center;
+  margin-bottom: 5px;
 `;
 
-// Motion-enhanced Star with unique twinkling effect per star
 const Star = styled(motion.div)`
   position: absolute;
   background-color: white;
