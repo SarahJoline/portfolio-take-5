@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import StarButton from "./components/StarButton";
 
 const StyledContainer = styled.div`
@@ -18,6 +18,7 @@ const StyledContainer = styled.div`
   );
   position: relative;
   overflow: hidden;
+  gap: 20px;
 `;
 
 const StyledHeader = styled(motion.h1)`
@@ -72,6 +73,12 @@ const generateStars = () => {
   return stars;
 };
 
+const fadeIn = keyframes`
+  0% { opacity: 0; filter: blur(5px); transform: scale(0.8); }
+  80% { opacity: 1; filter: blur(0px); transform: scale(1); }
+  100% { opacity: 1; }
+`;
+
 function App() {
   return (
     <StyledContainer>
@@ -86,7 +93,7 @@ function App() {
       <StyledSubheader
         initial={{ opacity: 0, y: -300 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1.2, delay: 3 }}
+        transition={{ duration: 2, delay: 3 }}
       >
         I'm a Full-stack web developer
       </StyledSubheader>
